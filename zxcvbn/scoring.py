@@ -4,7 +4,7 @@ import re
 from zxcvbn.types import PasswordMatch
 
 from .adjacency_graphs import ADJACENCY_GRAPHS
-from .types import AdjacencyGraph
+from .types import AdjacencyGraph, Result, ResultBase
 
 from decimal import Decimal
 from re import Match
@@ -74,7 +74,7 @@ def nCk(n: int, k: int) -> int:
 #    D^(l-1) approximates Sum(D^i for i in [1..l-1]
 #
 # ------------------------------------------------------------------------------
-def most_guessable_match_sequence(password: str, matches: List[PasswordMatch], _exclude_additive: bool=False) -> Dict[str, Any]:
+def most_guessable_match_sequence(password: str, matches: List[PasswordMatch], _exclude_additive: bool=False) -> ResultBase:
     n = len(password)
 
     # partition matches into sublists according to ending index j
@@ -220,7 +220,7 @@ def most_guessable_match_sequence(password: str, matches: List[PasswordMatch], _
 
 
 def estimate_guesses(match: PasswordMatch, password: str) -> int:
-    if match.get('guesses', False):
+    if 'guesses' in match:
         return match['guesses']
 
     min_guesses = 1
@@ -240,11 +240,11 @@ def estimate_guesses(match: PasswordMatch, password: str) -> int:
         'date': date_guesses,
     }
 
-    guesses = estimation_functions[match['pattern']](match)
-    match['guesses'] = max(guesses, min_guesses)
-    match['guesses_log10'] = log(match['guesses'], 10)
+    guesses = max(min_guesses, estimation_functions[match['pattern']](match))
+    match['guesses'] = guesses
+    match['guesses_log10'] = log(guesses, 10)
 
-    return match['guesses']
+    return guesses
 
 
 def bruteforce_guesses(match: PasswordMatch) -> int:
