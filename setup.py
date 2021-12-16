@@ -4,7 +4,7 @@ with open('README.rst') as file:
     long_description = file.read()
 
 setup(
-    name='zxcvbn',
+    name='zxcvbn-covert',
     version='5.0.1',
     packages=['zxcvbn'],
     url='https://github.com/covert-encryption/zxcvbn-python/',
