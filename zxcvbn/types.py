@@ -1,12 +1,11 @@
 from datetime import timedelta
 from decimal import Decimal
-from typing import Any, Dict, List, Tuple, Match, Optional, Set, TypedDict
+from typing import Any, Dict, List, Match, Optional, Set, Tuple, TypedDict
 
 AdjacencyGraph = Dict[str, List[Optional[str]]]
 RankedDict = Dict[str, int]
 SubstitutionTable = Dict[str, Set[str]]
 SubstitutionDict = Dict[str, str]
-
 
 
 class PasswordMatchBase(TypedDict):

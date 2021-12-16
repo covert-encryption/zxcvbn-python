@@ -1,14 +1,11 @@
-from math import log, factorial
-
 import re
-from zxcvbn.types import PasswordMatch
+from decimal import Decimal
+from math import factorial, log
+from re import Match
+from typing import Any, Callable, Dict, List, Optional, Union
 
 from .adjacency_graphs import ADJACENCY_GRAPHS
-from .types import AdjacencyGraph, Result, ResultBase
-
-from decimal import Decimal
-from re import Match
-from typing import Any, Dict, List, Optional, Union, Callable
+from .types import AdjacencyGraph, PasswordMatch, Result, ResultBase
 
 
 def calc_average_degree(graph: AdjacencyGraph) -> float:

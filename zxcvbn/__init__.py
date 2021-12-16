@@ -1,7 +1,7 @@
 import time
 from datetime import timedelta
 from decimal import Decimal
-from typing import Any, Dict, Iterable, List, TypedDict, Optional
+from typing import Any, Dict, Iterable, List, Optional, TypedDict
 
 from . import feedback, matching, scoring, time_estimates, types
 

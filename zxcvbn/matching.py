@@ -1,12 +1,12 @@
 import re
 from decimal import Decimal
 from re import Match, Pattern
-from typing import Any, Dict, List, Optional, Set, Tuple, Union, Callable
+from typing import Any, Callable, Dict, List, Optional, Set, Tuple, Union
 
 from . import adjacency_graphs, scoring
 from .frequency_lists import FREQUENCY_LISTS
 from .scoring import most_guessable_match_sequence
-from .types import RankedDict, SubstitutionDict, SubstitutionTable, AdjacencyGraph, PasswordMatch
+from .types import AdjacencyGraph, PasswordMatch, RankedDict, SubstitutionDict, SubstitutionTable
 
 
 def build_ranked_dict(ordered_list: List[str]) -> RankedDict:
