@@ -5,13 +5,13 @@ with open('README.rst') as file:
 
 setup(
     name='zxcvbn',
-    version='5.0.0',
+    version='5.0.1',
     packages=['zxcvbn'],
-    url='https://github.com/dwolfhub/zxcvbn-python',
-    download_url='https://github.com/dwolfhub/zxcvbn-python/tarball/v5.0.0',
+    url='https://github.com/covert-encryption/zxcvbn-python/',
     license='MIT',
     author='Daniel Wolf',
     author_email='danielrwolf5@gmail.com',
+    maintainer='Covert Encryption',
     long_description=long_description,
     keywords=['zxcvbn', 'password', 'security'],
     entry_points={
@@ -24,10 +24,9 @@ setup(
         'License :: OSI Approved :: MIT License',
         'Natural Language :: English',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.6',
-        'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
         'Topic :: Security',
         'Topic :: Software Development :: Libraries :: Python Modules',
     ]
